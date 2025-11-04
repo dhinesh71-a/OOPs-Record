@@ -1,0 +1,126 @@
+import java.sql.*;
+import java.util.Scanner;
+
+public class JDBCAllTestCases {
+    public static void main(String[] args) {
+
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+
+        String url = "jdbc:mysql://localhost:3306/testdb"; // Change to your database name
+        String user = "root";
+        String password = "Surya@2006";
+
+        Scanner sc = new Scanner(System.in);
+
+        try {
+            // 1. Load JDBC Driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            System.out.println("JDBC Driver Loaded Successfully!");
+
+            // 2. Establish Connection
+            conn = DriverManager.getConnection(url, user, password);
+            System.out.println("Connected to Database Successfully!\n");
+
+            stmt = conn.createStatement();
+
+            System.out.println("----- JDBC Test Case Menu -----");
+            System.out.println("1. TC1 - Test Connection");
+            System.out.println("2. TC2 - Execute SELECT Query");
+            System.out.println("3. TC3 - Invalid Credentials");
+            System.out.println("4. TC4 - Empty Query");
+            System.out.println("5. TC5 - Malformed SQL");
+            System.out.print("Enter your choice (1–5): ");
+
+            int choice = sc.nextInt();
+            System.out.println("--------------------------------\n");
+
+            switch (choice) {
+
+                // TC1: Successful Connection
+                case 1:
+                    System.out.println("TC1: Connect to DB successfully → Output: Connected");
+                    System.out.println("Status: Connected to Database Successfully!");
+                    break;
+
+                // TC2: Execute valid SELECT query
+                case 2:
+                    try {
+                        String query = "SELECT * FROM students"; // Change table name as per your DB
+                        rs = stmt.executeQuery(query);
+
+                        System.out.println("TC2: Execute SELECT query → Records displayed");
+                        System.out.println("Student Records:");
+
+                        boolean found = false;
+                        while (rs.next()) {
+                            found = true;
+                            int id = rs.getInt("id");
+                            String name = rs.getString("name");
+                            String dept = rs.getString("department");
+                            System.out.println(id + " | " + name + " | " + dept);
+                        }
+
+                        if (!found) {
+                            System.out.println("No records found.");
+                        }
+
+                    } catch (SQLException e) {
+                        System.out.println("Database Error: " + e.getMessage());
+                    }
+                    break;
+
+                // TC3: Invalid Credentials
+                case 3:
+                    try {
+                        System.out.println("TC3: Invalid credentials → Access denied");
+                        Connection badConn = DriverManager.getConnection(url, "wrongUser", "wrongPass");
+                    } catch (SQLException e) {
+                        System.out.println("Database Error: " + e.getMessage());
+                    }
+                    break;
+
+                // TC4: Empty Query
+                case 4:
+                    String emptyQuery = "";
+                    if (emptyQuery == null || emptyQuery.trim().isEmpty()) {
+                        System.out.println("TC4: Execute empty query → Output: No results");
+                        System.out.println("No results found (Empty query).");
+                    } else {
+                        rs = stmt.executeQuery(emptyQuery);
+                    }
+                    break;
+
+                // TC5: Malformed SQL
+                case 5:
+                    try {
+                        System.out.println("TC5: Malformed SQL → Output: SQLSyntaxErrorException");
+                        String badSQL = "SELEC * FROM students"; // Misspelled SELECT
+                        rs = stmt.executeQuery(badSQL);
+                    } catch (SQLException e) {
+                        System.out.println("Database Error: " + e.getMessage());
+                    }
+                    break;
+
+                default:
+                    System.out.println("Invalid choice! Please enter a number between 1 and 5.");
+            }
+
+        } catch (ClassNotFoundException e) {
+            System.out.println("JDBC Driver not found!");
+        } catch (SQLException e) {
+            System.out.println("Database Error: " + e.getMessage());
+        } finally {
+            // Close resources safely
+            try {
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                System.out.println("Error closing resources: " + e.getMessage());
+            }
+            sc.close();
+        }
+    }
+}
