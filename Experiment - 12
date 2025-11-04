@@ -1,0 +1,75 @@
+package rmiapp;
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
+public interface Remoteservice extends Remote {
+    String processRequest(String clientMessage) throws RemoteException;
+}
+package rmiapp;
+import java.rmi.*;
+import java.rmi.server.*;
+import java.rmi.registry.*;
+
+public class RMIServer extends UnicastRemoteObject implements Remoteservice {
+
+    protected RMIServer() throws RemoteException {
+        super();
+    }
+
+    public String processRequest(String clientMessage) throws RemoteException {
+        System.out.println("Client Message Received: " + clientMessage);
+
+        Thread t = new Thread(() -> {
+            System.out.println("Processing in Thread: " + Thread.currentThread().getName());
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+        t.start();
+
+        return "Server Response: Processed '" + clientMessage + "'";
+    }
+
+    public static void main(String[] args) {
+        try {
+            try {
+                LocateRegistry.createRegistry(1099);
+                System.out.println("RMI Registry created on port 1099.");
+            } catch (Exception e) {
+                System.out.println("Registry already exists: " + e.getMessage());
+            }
+
+            RMIServer server = new RMIServer();
+            Naming.rebind("rmi://localhost:1099/Service", server);
+            System.out.println("Server is running and ready for clients...");
+
+        } catch (Exception e) {
+            System.out.println("Server Exception: " + e);
+        }
+    }
+}
+package rmiapp;
+import java.rmi.*;
+
+public class RMIClient {
+    public static void main(String[] args) {
+        try {
+            Remoteservice service = (Remoteservice) Naming.lookup("rmi://localhost:1099/Service");
+            System.out.println("Connected to the Server!");
+
+            for (int i = 1; i <= 3; i++) {
+                String response = service.processRequest("Request " + i);
+                System.out.println("Response from Server: " + response);
+            }
+
+            System.out.println("\n--- DHINESH KUMAR G ---");
+            System.out.println("Register No: 2117240070071");
+
+        } catch (Exception e) {
+            System.out.println("Client Exception: " + e);
+            e.printStackTrace();
+        }
+    }
+}
