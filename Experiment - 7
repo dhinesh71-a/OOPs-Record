@@ -1,0 +1,89 @@
+Test case 1
+package exceptionhandling;
+
+public class Project7_ExceptionHandling {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        int a = 10, b = 2;
+        try {
+            int result = a / b;
+            System.out.println("Result = " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Exception handled: Division by zero");
+        }
+    }
+}
+
+Test case 2
+package exceptionhandling;
+
+public class Project7_ExceptionHandling {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        int a = 20, b = 0;
+        try {
+            int result = a / b;
+            System.out.println("Result = " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Exception handled: Division by zero");
+        }
+    }
+}
+
+Test case 3
+package exceptionhandling;
+
+public class Project7_ExceptionHandling {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        int a = -5, b = 5;
+        try {
+            int result = a / b;
+            System.out.println("Result = " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Exception handled: Division by zero");
+        }
+    }
+}
+
+Test case 4
+package exceptionhandling;
+
+public class Project7_ExceptionHandling {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        int a = 0, b = 3;
+        try {
+            int result = a / b;
+            System.out.println("Result = " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Exception handled: Division by zero");
+        }
+    }
+}
+
+Test case 5
+package exceptionhandling;
+
+public class Project7_ExceptionHandling {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        int a = 100, b = -10;
+        try {
+            int result = a / b;
+            System.out.println("Result = " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Exception handled: Division by zero");
+        }
+    }
+}
