@@ -1,0 +1,204 @@
+Test case 1
+package banking;
+
+interface BankingService {
+    void deposit(double amount);
+    void withdraw(double amount);
+    double getBalance();
+}
+
+class Account implements BankingService {
+    private double balance = 0;
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: ₹" + amount);
+        } else {
+            System.out.println("Invalid deposit amount");
+        }
+    }
+
+    public void withdraw(double amount) {
+        System.out.println("Withdraw not used in this test case");
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+public class Project6_BankingSystem {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        Account acc = new Account();
+        acc.deposit(1000);
+        System.out.println("Balance = ₹" + acc.getBalance());
+    }
+}
+
+Test case 2
+package banking;
+
+interface BankingService {
+    void deposit(double amount);
+    void withdraw(double amount);
+    double getBalance();
+}
+
+class Account implements BankingService {
+    private double balance = 0;
+
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    public void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn: ₹" + amount);
+        } else {
+            System.out.println("Insufficient funds");
+        }
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+public class Project6_BankingSystem {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        Account acc = new Account();
+        acc.deposit(1000);
+        acc.withdraw(500);
+        System.out.println("Balance = ₹" + acc.getBalance());
+    }
+}
+
+Test case 3
+package banking;
+
+interface BankingService {
+    void deposit(double amount);
+    void withdraw(double amount);
+    double getBalance();
+}
+
+class Account implements BankingService {
+    private double balance = 0;
+
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    public void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn: ₹" + amount);
+        } else {
+            System.out.println("Insufficient funds");
+        }
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+public class Project6_BankingSystem {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        Account acc = new Account();
+        acc.deposit(1000);
+        acc.withdraw(1500);
+    }
+}
+
+Test case 4
+package banking;
+
+interface BankingService {
+    void deposit(double amount);
+    void withdraw(double amount);
+    double getBalance();
+}
+
+class Account implements BankingService {
+    private double balance = 0;
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: ₹" + amount);
+        } else {
+            System.out.println("Invalid deposit amount");
+        }
+    }
+
+    public void withdraw(double amount) {
+        System.out.println("Withdraw not used in this test case");
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+public class Project6_BankingSystem {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        Account acc = new Account();
+        acc.deposit(-500);
+    }
+}
+
+Test case 5
+package banking;
+
+interface BankingService {
+    void deposit(double amount);
+    void withdraw(double amount);
+    double getBalance();
+}
+
+class Account implements BankingService {
+    private double balance = 0;
+
+    public void deposit(double amount) {
+        if (amount > 0) balance += amount;
+    }
+
+    public void withdraw(double amount) {
+        if (amount <= balance) balance -= amount;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+class Transaction {
+    void log(String message) {
+        System.out.println("Transaction recorded: " + message);
+    }
+}
+
+public class Project6_BankingSystem {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        Transaction t = new Transaction();
+        t.log("Deposited ₹1000");
+    }
+}
