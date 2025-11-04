@@ -1,0 +1,170 @@
+Test case 1
+class Node<T> {
+    T data;
+    Node<T> left, right;
+
+    Node(T data) {
+        this.data = data;
+        left = right = null;
+    }
+}
+
+class BinaryTreeTraversal {
+    Node<Integer> root;
+
+    void inorder(Node<Integer> node) {
+        if (node == null) return;
+        inorder(node.left);
+        System.out.print(node.data + " ");
+        inorder(node.right);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        BinaryTreeTraversal tree = new BinaryTreeTraversal();
+        tree.root = new Node<>(10);
+        tree.root.left = new Node<>(5);
+        tree.root.right = new Node<>(15);
+
+        tree.inorder(tree.root);
+    }
+}
+
+Test case 2
+class Node<T> {
+    T data;
+    Node<T> left, right;
+
+    Node(T data) {
+        this.data = data;
+        left = right = null;
+    }
+}
+
+class BinaryTreeTraversal {
+    Node<Integer> root;
+
+    void inorder(Node<Integer> node) {
+        if (node == null) return;
+        inorder(node.left);
+        System.out.print(node.data + " ");
+        inorder(node.right);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        BinaryTreeTraversal tree = new BinaryTreeTraversal();
+        tree.root = new Node<>(25);
+        tree.root.left = new Node<>(10);
+        tree.root.right = new Node<>(30);
+        tree.root.left.left = new Node<>(5);
+
+        tree.inorder(tree.root);
+    }
+}
+
+Test case 3
+class Node<T> {
+    T data;
+    Node<T> left, right;
+
+    Node(T data) {
+        this.data = data;
+        left = right = null;
+    }
+}
+
+class BinaryTreeTraversal {
+    Node<String> root;
+
+    void inorder(Node<String> node) {
+        if (node == null) return;
+        inorder(node.left);
+        System.out.print(node.data + " ");
+        inorder(node.right);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        BinaryTreeTraversal tree = new BinaryTreeTraversal();
+        tree.root = new Node<>("B");
+        tree.root.left = new Node<>("A");
+        tree.root.right = new Node<>("C");
+
+        tree.inorder(tree.root);
+    }
+}
+
+Test case 4
+class Node<T> {
+    T data;
+    Node<T> left, right;
+
+    Node(T data) {
+        this.data = data;
+        left = right = null;
+    }
+}
+
+class BinaryTreeTraversal {
+    Node<Integer> root;
+
+    void inorder(Node<Integer> node) {
+        if (node == null) return;
+        inorder(node.left);
+        System.out.print(node.data + " ");
+        inorder(node.right);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        BinaryTreeTraversal tree = new BinaryTreeTraversal();
+        tree.root = new Node<>(100);
+        tree.root.left = new Node<>(50);
+        tree.root.right = new Node<>(150);
+        tree.root.right.right = new Node<>(200);
+
+        tree.inorder(tree.root);
+    }
+}
+
+Test case 5
+class Node<T> {
+    T data;
+    Node<T> left, right;
+
+    Node(T data) {
+        this.data = data;
+        left = right = null;
+    }
+}
+
+class BinaryTreeTraversal {
+    Node<Integer> root;
+
+    void inorder(Node<Integer> node) {
+        if (node == null) return;
+        inorder(node.left);
+        System.out.print(node.data + " ");
+        inorder(node.right);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        BinaryTreeTraversal tree = new BinaryTreeTraversal();
+        tree.root = new Node<>(1);
+        tree.root.right = new Node<>(2);
+
+        tree.inorder(tree.root);
+    }
+}
