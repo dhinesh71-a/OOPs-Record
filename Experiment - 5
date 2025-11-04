@@ -1,0 +1,137 @@
+Test case 1
+package inheritanceshape;
+
+class Shape {
+    double area() {
+        return 0.0;
+    }
+}
+
+class Circle extends Shape {
+    double radius;
+    Circle(double radius) {
+        this.radius = radius;
+    }
+    double area() {
+        return Math.PI * radius * radius;
+    }
+}
+
+public class Project5_Shape {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        Circle c = new Circle(5);
+        System.out.println("Circle with radius 5 → Area = " + c.area());
+    }
+}
+
+Test case 2
+package inheritanceshape;
+
+class Shape {
+    double area() {
+        return 0.0;
+    }
+}
+
+class Rectangle extends Shape {
+    double length, width;
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+    double area() {
+        return length * width;
+    }
+}
+
+public class Project5_Shape {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        Rectangle r = new Rectangle(10, 5);
+        System.out.println("Rectangle 10x5 → Area = " + r.area());
+    }
+}
+
+Test case 3
+package inheritanceshape;
+
+class Shape {
+    double area() {
+        System.out.println("Default area");
+        return 0.0;
+    }
+}
+
+public class Project5_Shape {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        Shape s = new Shape();
+        s.area();
+    }
+}
+
+Test case 4
+package inheritanceshape;
+
+class Shape {
+    double area() {
+        return 0.0;
+    }
+}
+
+class Circle extends Shape {
+    double radius;
+    Circle(double radius) {
+        this.radius = radius;
+    }
+    double area() {
+        return Math.PI * radius * radius;
+    }
+}
+
+public class Project5_Shape {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        Circle c = new Circle(0);
+        System.out.println("Circle with radius 0 → Area = " + c.area());
+    }
+}
+
+Test case 5
+package inheritanceshape;
+
+class Shape {
+    double area() {
+        return 0.0;
+    }
+}
+
+class Rectangle extends Shape {
+    double length, width;
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+    double area() {
+        return length * width;
+    }
+}
+
+public class Project5_Shape {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        Rectangle r = new Rectangle(8, 0);
+        System.out.println("Rectangle 8x0 → Area = " + r.area());
+    }
+}
