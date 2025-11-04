@@ -1,0 +1,126 @@
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.scene.Scene;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.scene.paint.Color;
+import javafx.scene.layout.HBox;
+import javafx.geometry.Pos;
+import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class RealTimeDataVisualization extends Application {
+
+    private XYChart.Series<Number, Number> series;
+    private int time = 0;
+    private Timer timer;
+    private Random random = new Random();
+    private boolean updating = false;
+
+    @Override
+    public void start(Stage stage) {
+
+        stage.setTitle("Real-Time Data Visualization - DHINESH KUMAR G (2117240070071)");
+
+        NumberAxis xAxis = new NumberAxis(0, 110, 10);
+        xAxis.setLabel("Time (seconds)");
+
+        NumberAxis yAxis = new NumberAxis(0, 110, 10);
+        yAxis.setLabel("Value");
+
+        LineChart<Number, Number> lineChart = new LineChart<>(xAxis, yAxis);
+        lineChart.setTitle("Real-Time Data Graph");
+
+        series = new XYChart.Series<>();
+        series.setName("Live Data Stream");
+        lineChart.getData().add(series);
+
+        Button startButton = new Button("Start Updates");
+        Button stopButton = new Button("Stop Updates");
+        Button simulateErrorButton = new Button("Simulate Non-Numeric Input");
+
+        startButton.setStyle("-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;");
+        stopButton.setStyle("-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold;");
+        simulateErrorButton.setStyle("-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold;");
+
+        startButton.setOnAction(e -> startUpdates());
+        stopButton.setOnAction(e -> stopUpdates());
+        simulateErrorButton.setOnAction(e -> simulateNonNumericInput());
+
+        HBox buttons = new HBox(15, startButton, stopButton, simulateErrorButton);
+        buttons.setAlignment(Pos.CENTER);
+
+        Label footer = new Label("Developed by DHINESH KUMAR G - Reg No: 2117240070071");
+        footer.setTextFill(Color.DARKBLUE);
+        footer.setStyle("-fx-font-size: 14; -fx-font-weight: bold;");
+
+        VBox root = new VBox(15, lineChart, buttons, footer);
+        root.setAlignment(Pos.CENTER);
+        root.setStyle("-fx-padding: 15; -fx-background-color: white;");
+
+        stage.setScene(new Scene(root, 850, 600));
+        stage.show();
+    }
+
+    private void startUpdates() {
+        if (updating) return;
+        updating = true;
+
+        timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                Platform.runLater(() -> {
+                    if (time > 100) {
+                        series.getData().clear();
+                        time = 0;
+                    }
+
+                    double value = 10 + random.nextDouble() * 90;
+                    series.getData().add(new XYChart.Data<>(time++, value));
+                });
+            }
+        }, 0, 500);
+    }
+
+    private void stopUpdates() {
+        updating = false;
+        if (timer != null) timer.cancel();
+    }
+
+    private void simulateNonNumericInput() {
+        Platform.runLater(() -> {
+            try {
+                String fakeValue = "ABC";
+                Double.parseDouble(fakeValue);
+            } catch (NumberFormatException e) {
+                Label errorLabel = new Label("Error: Non-numeric data encountered!");
+                errorLabel.setTextFill(Color.RED);
+
+                Stage alertStage = new Stage();
+                VBox alertBox = new VBox(errorLabel);
+                alertBox.setAlignment(Pos.CENTER);
+                alertBox.setStyle("-fx-padding: 20;");
+
+                alertStage.setScene(new Scene(alertBox, 300, 100));
+                alertStage.setTitle("Data Error");
+                alertStage.show();
+            }
+        });
+    }
+
+    @Override
+    public void stop() {
+        stopUpdates();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
