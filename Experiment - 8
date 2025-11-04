@@ -1,0 +1,164 @@
+Test case 1
+class Car extends Thread {
+    String carName;
+
+    Car(String name) {
+        carName = name;
+    }
+
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(carName + " is at position " + i);
+            try {
+                Thread.sleep(400);
+            } catch (Exception e) {
+            }
+        }
+        System.out.println(carName + " finished the race");
+    }
+}
+
+public class RaceSimulation {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        Car c1 = new Car("Car A");
+        Car c2 = new Car("Car B");
+
+        c1.start();
+        c2.start();
+    }
+}
+
+Test case 2
+class Car extends Thread {
+    String carName;
+
+    Car(String name) {
+        carName = name;
+    }
+
+    public void run() {
+        for (int i = 1; i <= 6; i++) {
+            System.out.println(carName + " at lap " + i);
+            try {
+                Thread.sleep(500);
+            } catch (Exception e) {
+            }
+        }
+        System.out.println(carName + " completed race");
+    }
+}
+
+public class RaceSimulation {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        Car c1 = new Car("Ferrari");
+        Car c2 = new Car("BMW");
+
+        c1.start();
+        c2.start();
+    }
+}
+
+Test case 3
+class Car extends Thread {
+    String carName;
+
+    Car(String name) {
+        carName = name;
+    }
+
+    public void run() {
+        for (int i = 1; i <= 4; i++) {
+            System.out.println(carName + " speed check " + i);
+            try {
+                Thread.sleep(300);
+            } catch (Exception e) {
+            }
+        }
+        System.out.println(carName + " reached finish line");
+    }
+}
+
+public class RaceSimulation {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        Car c1 = new Car("Audi");
+        Car c2 = new Car("Lamborghini");
+
+        c1.start();
+        c2.start();
+    }
+}
+
+Test case 4
+class Car extends Thread {
+    String carName;
+
+    Car(String name) {
+        carName = name;
+    }
+
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(carName + " progress " + i);
+            try {
+                Thread.sleep(700);
+            } catch (Exception e) {
+            }
+        }
+        System.out.println(carName + " finished");
+    }
+}
+
+public class RaceSimulation {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        Car c1 = new Car("Jaguar");
+        Car c2 = new Car("Rolls Royce");
+
+        c1.start();
+        c2.start();
+    }
+}
+
+Test case 5
+class Car extends Thread {
+    String carName;
+
+    Car(String name) {
+        carName = name;
+    }
+
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(carName + " step " + i);
+            try {
+                Thread.sleep(200);
+            } catch (Exception e) {
+            }
+        }
+        System.out.println(carName + " is done");
+    }
+}
+
+public class RaceSimulation {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        Car c1 = new Car("Tesla");
+        Car c2 = new Car("Porsche");
+
+        c1.start();
+        c2.start();
+    }
+}
