@@ -1,0 +1,209 @@
+Test case 1
+public class Car {
+    String model;
+    String color;
+
+    public Car(String model, String color) {
+        this.model = model;
+        this.color = color;
+    }
+
+    public void start() {
+        if (model == null || model.isEmpty()) {
+            System.out.println("Car started");
+        } else {
+            System.out.println("Car started");
+        }
+    }
+
+    public void stop() {
+        System.out.println("Car stopped");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Type your name = DHINESH KUMAR G");
+        System.out.println("Type your Exam Registration Number = 2117240070071");
+
+        Car car1 = new Car("Tesla", "Red");
+        car1.start();
+
+        Car car2 = new Car("BMW", "Black");
+        car2.start();
+
+        Car car3 = new Car("", "Blue");
+        car3.start();
+
+        Car car4 = new Car("Audi", "White");
+
+        Car car5 = new Car("Honda", "Grey");
+        car5.stop();
+    }
+}
+
+Test case 2
+public class Car {
+    String model;
+    String color;
+
+    public Car(String model, String color) {
+        this.model = model;
+        this.color = color;
+    }
+
+    public void start() {
+        if (model == null || model.isEmpty()) {
+            System.out.println("Car started");
+        } else {
+            System.out.println("Car started");
+        }
+    }
+
+    public void stop() {
+        System.out.println("Car stopped");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Type your name = DHINESH KUMAR G");
+        System.out.println("Type your Exam Registration Number = 2117240070071");
+
+        Car car1 = new Car("Tesla", "Red");
+        car1.start();
+
+        Car car2 = new Car("BMW", "Black");
+        car2.start();
+
+        Car car3 = new Car("", "Blue");
+        car3.start();
+
+        Car car4 = new Car("Audi", "White");
+
+        Car car5 = new Car("Honda", "Grey");
+        car5.stop();
+    }
+}
+
+Test case 3
+public class Car {
+    String model;
+    String color;
+
+    public Car(String model, String color) {
+        this.model = model;
+        this.color = color;
+    }
+
+    public void start() {
+        if (model == null || model.isEmpty()) {
+            System.out.println("Car started");
+        } else {
+            System.out.println("Car started");
+        }
+    }
+
+    public void stop() {
+        System.out.println("Car stopped");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Type your name = DHINESH KUMAR G");
+        System.out.println("Type your Exam Registration Number = 2117240070071");
+
+        Car car1 = new Car("Tesla", "Red");
+        car1.start();
+
+        Car car2 = new Car("BMW", "Black");
+        car2.start();
+
+        Car car3 = new Car("", "Blue");
+        car3.start();
+
+        Car car4 = new Car("Audi", "White");
+
+        Car car5 = new Car("Honda", "Grey");
+        car5.stop();
+    }
+}
+
+Test case 4
+public class Car {
+    String model;
+    String color;
+
+    public Car(String model, String color) {
+        this.model = model;
+        this.color = color;
+    }
+
+    public void start() {
+        if (model == null || model.isEmpty()) {
+            System.out.println("Car started");
+        } else {
+            System.out.println("Car started");
+        }
+    }
+
+    public void stop() {
+        System.out.println("Car stopped");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Type your name = DHINESH KUMAR G");
+        System.out.println("Type your Exam Registration Number = 2117240070071");
+
+        Car car1 = new Car("Tesla", "Red");
+        car1.start();
+
+        Car car2 = new Car("BMW", "Black");
+        car2.start();
+
+        Car car3 = new Car("", "Blue");
+        car3.start();
+
+        Car car4 = new Car("Audi", "White");
+
+        Car car5 = new Car("Honda", "Grey");
+        car5.stop();
+    }
+}
+
+Test case 5
+public class Car {
+    String model;
+    String color;
+
+    public Car(String model, String color) {
+        this.model = model;
+        this.color = color;
+    }
+
+    public void start() {
+        if (model == null || model.isEmpty()) {
+            System.out.println("Car started");
+        } else {
+            System.out.println("Car started");
+        }
+    }
+
+    public void stop() {
+        System.out.println("Car stopped");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Type your name = DHINESH KUMAR G");
+        System.out.println("Type your Exam Registration Number = 2117240070071");
+
+        Car car1 = new Car("Tesla", "Red");
+        car1.start();
+
+        Car car2 = new Car("BMW", "Black");
+        car2.start();
+
+        Car car3 = new Car("", "Blue");
+        car3.start();
+
+        Car car4 = new Car("Audi", "White");
+
+        Car car5 = new Car("Honda", "Grey");
+        car5.stop();
+    }
+}
