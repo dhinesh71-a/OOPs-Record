@@ -1,0 +1,174 @@
+Test case 1
+import java.io.*;
+import java.net.*;
+
+public class ClientServerDemo {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        Thread serverThread = new Thread(() -> {
+            try {
+                ServerSocket ss = new ServerSocket(5000);
+                Socket s = ss.accept();
+                DataInputStream dis = new DataInputStream(s.getInputStream());
+                String msg = dis.readUTF();
+                System.out.println("Server received: " + msg);
+                ss.close();
+            } catch(Exception e){}
+        });
+
+        Thread clientThread = new Thread(() -> {
+            try {
+                Socket s = new Socket("localhost", 5000);
+                DataOutputStream dos = new DataOutputStream(s.getOutputStream());
+                dos.writeUTF("Hello Server");
+                s.close();
+            } catch(Exception e){}
+        });
+
+        serverThread.start();
+        try { Thread.sleep(500); } catch(Exception e){}
+        clientThread.start();
+    }
+}
+
+Test case 2
+import java.io.*;
+import java.net.*;
+
+public class ClientServerDemo {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        Thread serverThread = new Thread(() -> {
+            try {
+                ServerSocket ss = new ServerSocket(5001);
+                Socket s = ss.accept();
+                DataInputStream dis = new DataInputStream(s.getInputStream());
+                String msg = dis.readUTF();
+                System.out.println("Server received: " + msg);
+                ss.close();
+            } catch(Exception e){}
+        });
+
+        Thread clientThread = new Thread(() -> {
+            try {
+                Socket s = new Socket("localhost", 5001);
+                DataOutputStream dos = new DataOutputStream(s.getOutputStream());
+                dos.writeUTF("Test Message");
+                s.close();
+            } catch(Exception e){}
+        });
+
+        serverThread.start();
+        try { Thread.sleep(500); } catch(Exception e){}
+        clientThread.start();
+    }
+}
+
+Test case 3
+import java.io.*;
+import java.net.*;
+
+public class ClientServerDemo {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        Thread serverThread = new Thread(() -> {
+            try {
+                ServerSocket ss = new ServerSocket(5002);
+                Socket s = ss.accept();
+                DataInputStream dis = new DataInputStream(s.getInputStream());
+                String msg = dis.readUTF();
+                System.out.println("Server received: " + msg);
+                ss.close();
+            } catch(Exception e){}
+        });
+
+        Thread clientThread = new Thread(() -> {
+            try {
+                Socket s = new Socket("localhost", 5002);
+                DataOutputStream dos = new DataOutputStream(s.getOutputStream());
+                dos.writeUTF("Hi Server, this is Client");
+                s.close();
+            } catch(Exception e){}
+        });
+
+        serverThread.start();
+        try { Thread.sleep(500); } catch(Exception e){}
+        clientThread.start();
+    }
+}
+
+Test case 4
+import java.io.*;
+import java.net.*;
+
+public class ClientServerDemo {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        Thread serverThread = new Thread(() -> {
+            try {
+                ServerSocket ss = new ServerSocket(5003);
+                Socket s = ss.accept();
+                DataInputStream dis = new DataInputStream(s.getInputStream());
+                String msg = dis.readUTF();
+                System.out.println("Server received: " + msg);
+                ss.close();
+            } catch(Exception e){}
+        });
+
+        Thread clientThread = new Thread(() -> {
+            try {
+                Socket s = new Socket("localhost", 5003);
+                DataOutputStream dos = new DataOutputStream(s.getOutputStream());
+                dos.writeUTF("Client says Good Luck");
+                s.close();
+            } catch(Exception e){}
+        });
+
+        serverThread.start();
+        try { Thread.sleep(500); } catch(Exception e){}
+        clientThread.start();
+    }
+}
+
+Test case 5
+import java.io.*;
+import java.net.*;
+
+public class ClientServerDemo {
+    public static void main(String[] args) {
+        System.out.println("Name = DHINESH KUMAR G");
+        System.out.println("Exam Registration Number = 2117240070071");
+
+        Thread serverThread = new Thread(() -> {
+            try {
+                ServerSocket ss = new ServerSocket(5004);
+                Socket s = ss.accept();
+                DataInputStream dis = new DataInputStream(s.getInputStream());
+                String msg = dis.readUTF();
+                System.out.println("Server received: " + msg);
+                ss.close();
+            } catch(Exception e){}
+        });
+
+        Thread clientThread = new Thread(() -> {
+            try {
+                Socket s = new Socket("localhost", 5004);
+                DataOutputStream dos = new DataOutputStream(s.getOutputStream());
+                dos.writeUTF("Final Test Case");
+                s.close();
+            } catch(Exception e){}
+        });
+
+        serverThread.start();
+        try { Thread.sleep(500); } catch(Exception e){}
+        clientThread.start();
+    }
+}
